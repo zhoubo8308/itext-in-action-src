@@ -24,7 +24,7 @@ public class HelloZip {
     
     /** Path to the resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter01/hello.zip";
+        =HelloWorld.class.getResource("/").getPath()+ "results/part1/chapter01/hello.zip";
     
     /**
      * Creates a zip file with five PDF documents:

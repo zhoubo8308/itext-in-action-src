@@ -23,7 +23,7 @@ public class HelloWorldNarrow {
 
     /** Path to the resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter01/hello_narrow.pdf";
+        =HelloWorld.class.getResource("/").getPath()+ "results/part1/chapter01/hello_narrow.pdf";
     
     /**
      * Creates a PDF file: hello_narrow.pdf

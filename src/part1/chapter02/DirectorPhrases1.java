@@ -30,7 +30,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class DirectorPhrases1 {
     
     /** The resulting PDF file. */
-    public static final String RESULT = "results/part1/chapter02/director_phrases_1.pdf";
+    public static final String RESULT =DatabaseTest.class.getResource("/").getPath().substring(1)+ "results/part1/chapter02/director_phrases_1.pdf";
 
     /** A font that will be used in our PDF. */
     public static final Font BOLD_UNDERLINED =

@@ -7,10 +7,9 @@
 
 package part1.chapter02;
 
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.PrintStream;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -24,7 +23,7 @@ import com.lowagie.database.HsqldbConnection;
 public class DatabaseTest {
     
     /** The output of this database test: a text file with a list of countries. */
-    public static final String RESULT = "results/part1/chapter02/countries.txt";
+    public static final String RESULT = DatabaseTest.class.getResource("/").getPath().substring(1)+"results/part1/chapter02/countries.txt";
     
     /**
      * Writes the names of the countries that are in our database
@@ -34,6 +33,15 @@ public class DatabaseTest {
     public static void main(String[] args)
         throws SQLException, UnsupportedEncodingException, FileNotFoundException {
     	// no PDF, just a text file
+        File file = new File(RESULT);
+        if(!file.exists()){
+            try {
+                Files.createDirectories(Paths.get(RESULT).getParent());
+                Files.createFile(Paths.get(RESULT));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         PrintStream out = new PrintStream(new FileOutputStream(RESULT));
         // Make the connection to the database
         DatabaseConnection connection = new HsqldbConnection("filmfestival");

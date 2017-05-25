@@ -42,7 +42,7 @@ public class MovieCountries1 {
     
     /** The resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter05/movie_countries1.pdf";
+        = "d:/movie_countries1.pdf";
 
     /**
      * Inner class to add a table as header.
@@ -118,7 +118,7 @@ public class MovieCountries1 {
     public void createPdf(String filename)
         throws IOException, DocumentException, SQLException {
         // Create a database connection
-    	DatabaseConnection connection = new HsqldbConnection("filmfestival");
+    	//DatabaseConnection connection = new HsqldbConnection("filmfestival");
         // step 1
         Document document = new Document(PageSize.A4, 36, 36, 54, 36);
         // step 2
@@ -128,7 +128,11 @@ public class MovieCountries1 {
         // step 3
         document.open();
         // step 4
-        Statement stm = connection.createStatement();
+
+        document.add(new Paragraph("hello",  FilmFonts.BOLD));
+        document.newPage();
+        document.add(new Paragraph("world",  FilmFonts.BOLD));
+        /* Statement stm = connection.createStatement();
         ResultSet rs = stm.executeQuery(
             "SELECT country, id FROM film_country ORDER BY country");
         while (rs.next()) {
@@ -146,11 +150,11 @@ public class MovieCountries1 {
                 document.add(PojoToElementFactory.getDirectorList(movie));
             }
             document.newPage();
-        }
+        }*/
         // step 4
         document.close();
         // close the database connection
-        connection.close();
+       // connection.close();
     }
     
     /**

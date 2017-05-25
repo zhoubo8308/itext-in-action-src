@@ -25,7 +25,7 @@ public class HelloWorldColumn {
 
     /** Path to the resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter01/hello_column.pdf";
+        =HelloWorld.class.getResource("/").getPath()+ "results/part1/chapter01/hello_column.pdf";
     
     /**
      * Creates a PDF file: hello_column.pdf

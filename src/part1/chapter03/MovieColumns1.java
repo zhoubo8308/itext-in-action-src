@@ -33,7 +33,7 @@ public class MovieColumns1 {
 
     /** The resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter03/movie_columns1.pdf";
+        = "d:/movie_columns1.pdf";
     
     /** Definition of two columns */
     public static final float[][] COLUMNS = {

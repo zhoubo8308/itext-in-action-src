@@ -20,7 +20,7 @@ public class HelloWorldLandscape2 {
 
     /** Path to the resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter01/hello_landscape2.pdf";
+        =HelloWorld.class.getResource("/").getPath()+ "results/part1/chapter01/hello_landscape2.pdf";
     
     /**
      * Creates a PDF file: hello_landscape2.pdf

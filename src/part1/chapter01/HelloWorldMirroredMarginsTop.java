@@ -24,7 +24,7 @@ public class HelloWorldMirroredMarginsTop {
 
     /** Path to the resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter01/hello_mirrored_top.pdf";
+        =HelloWorld.class.getResource("/").getPath()+ "results/part1/chapter01/hello_mirrored_top.pdf";
 
     /**
      * Creates a PDF file: hello_mirrored_margins.pdf

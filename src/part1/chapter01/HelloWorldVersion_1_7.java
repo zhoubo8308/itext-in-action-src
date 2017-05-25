@@ -22,7 +22,7 @@ public class HelloWorldVersion_1_7 {
 
     /** Path to the resulting PDF file. */
     public static final String RESULT =
-        "results/part1/chapter01/hello_1_7.pdf";
+            HelloWorld.class.getResource("/").getPath()+   "results/part1/chapter01/hello_1_7.pdf";
     
     /**
      * Creates a PDF file: hello.pdf

@@ -22,7 +22,7 @@ public class FontTypes {
 
     /** The resulting PDF file. */
     public static String RESULT
-        = "results/part3/chapter11/font_types.pdf";
+        = "d:/font_types.pdf";
     /** Some text. */
     public static String TEXT
         = "quick brown fox jumps over the lazy dog\nQUICK BROWN FOX JUMPS OVER THE LAZY DOG";
@@ -30,14 +30,14 @@ public class FontTypes {
     /** Paths to and encodings of fonts we're going to use in this example */
     public static String[][] FONTS = {
         {BaseFont.HELVETICA, BaseFont.WINANSI},
-        {"resources/fonts/cmr10.afm", BaseFont.WINANSI},
-        {"resources/fonts/cmr10.pfm", BaseFont.WINANSI},
-        {"c:/windows/fonts/ARBLI__.TTF", BaseFont.WINANSI},
+     //  {"resources/fonts/cmr10.afm", BaseFont.WINANSI},
+      //  {"resources/fonts/cmr10.pfm", BaseFont.WINANSI},
+    //    {"c:/windows/fonts/ARBLI__.TTF", BaseFont.WINANSI},
         {"c:/windows/fonts/arial.ttf", BaseFont.WINANSI},
         {"c:/windows/fonts/arial.ttf", BaseFont.IDENTITY_H},
         {"resources/fonts/Puritan2.otf", BaseFont.WINANSI},
-        {"c:/windows/fonts/msgothic.ttc,0", BaseFont.IDENTITY_H},
-        {"KozMinPro-Regular", "UniJIS-UCS2-H"}
+        {"c:/windows/fonts/msgothic.ttc,0", BaseFont.IDENTITY_H}
+    //    {"KozMinPro-Regular", "UniJIS-UCS2-H"}
     };
 
     /**

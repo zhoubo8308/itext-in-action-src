@@ -7,8 +7,12 @@
 
 package part1.chapter01;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -22,7 +26,7 @@ public class HelloWorld {
 
     /** Path to the resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter01/hello.pdf";
+        = HelloWorld.class.getResource("/").getPath()+"results/part1/chapter01/hello.pdf";
     
     /**
      * Creates a PDF file: hello.pdf
@@ -41,6 +45,11 @@ public class HelloWorld {
      */
     public void createPdf(String filename)
 	throws DocumentException, IOException {
+        File file = new File(RESULT);
+        if(!(new File(file.getParent()).exists())){
+            Files.createDirectories(Paths.get(file.getParent()));
+        }
+
         // step 1
         Document document = new Document();
         // step 2

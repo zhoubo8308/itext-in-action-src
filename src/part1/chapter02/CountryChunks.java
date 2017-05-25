@@ -30,7 +30,7 @@ public class CountryChunks {
     
     /** The resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter02/country_chunks.pdf";
+        = DatabaseTest.class.getResource("/").getPath().substring(1)+"results/part1/chapter02/country_chunks.pdf";
     
     /**
      * Main method.
