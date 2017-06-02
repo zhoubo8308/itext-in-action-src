@@ -24,7 +24,7 @@ import com.itextpdf.text.pdf.PdfContentByte;
 public class MovieCalendar extends MovieTextInfo {
 
     /** The resulting PDF. */
-    public static final String RESULT = "results/part1/chapter03/movie_calendar.pdf";
+    public static final String RESULT = MovieCalendar.class.getResource("/").getPath().substring(1)+ "results/part1/chapter03/movie_calendar.pdf";
     
     /**
      * Draws the info about the movie.

@@ -139,7 +139,8 @@ public class PdfCalendar {
             }
             // complete the table
             table.completeRow();
-            // write the table to an absolute position
+            // write the table to an absolute position 0-START ROW, -1 END ROW,
+            //169, table.getTotalHeight() + 18 COORDINATES OF THE UPPER-LEFT CORNER
             table.writeSelectedRows(0, -1, 169, table.getTotalHeight() + 18, canvas);
             document.newPage();
         }

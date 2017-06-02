@@ -35,7 +35,7 @@ public class MovieParagraphs1 {
 
     /** The resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter02/movie_paragraphs_1.pdf";
+        =DatabaseTest.class.getResource("/").getPath().substring(1)+  "results/part1/chapter02/movie_paragraphs_1.pdf";
     
     /**
      * Creates a Paragraph containing information about a movie.

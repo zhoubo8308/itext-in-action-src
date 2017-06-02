@@ -38,7 +38,7 @@ import com.itextpdf.text.BaseColor;
 public class MovieTextInfo extends MovieTimeBlocks {
 
     /** The resulting PDF. */
-    public static final String RESULT = "results/part1/chapter03/calendar.pdf";
+    public static final String RESULT = MovieTextInfo.class.getResource("/").getPath().substring(1)+ "results/part1/chapter03/calendar.pdf";
 
     /**
      * Creates a PDF document.

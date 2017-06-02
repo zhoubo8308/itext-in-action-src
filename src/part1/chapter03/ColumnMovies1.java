@@ -7,8 +7,11 @@
 
 package part1.chapter03;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -31,7 +34,7 @@ public class ColumnMovies1 {
 
     /** The resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter03/column_movies1.pdf";
+        = ColumnMovies1.class.getResource("/").getPath().substring(1)+ "results/part1/chapter03/column_movies1.pdf";
     /** Path to the resources. */
     public static final String RESOURCE
         = "resources/posters/%s.jpg";
@@ -122,6 +125,15 @@ public class ColumnMovies1 {
      * @throws SQLException
      */
     public static void main(String[] args) throws IOException, DocumentException, SQLException {
+        File file = new File(RESULT);
+        if(!file.exists()){
+            try {
+                Files.createDirectories(Paths.get(RESULT).getParent());
+                Files.createFile(Paths.get(RESULT));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         new ColumnMovies1().createPdf(RESULT);
     }
 }

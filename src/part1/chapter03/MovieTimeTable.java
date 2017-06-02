@@ -23,7 +23,7 @@ import com.itextpdf.text.BaseColor;
 public class MovieTimeTable {
 
     /** The resulting PDF. */
-    public static final String RESULT = "results/part1/chapter03/time_table.pdf";
+    public static final String RESULT =MovieTimeTable.class.getResource("/").getPath().substring(1)+ "results/part1/chapter03/time_table.pdf";
     
     /**
      * Creates a PDF file containing a time table for our filmfestival.

@@ -26,7 +26,7 @@ public class FestivalOpening {
 
     /** The resulting PDF. */
     public static final String RESULT
-        = "results/part1/chapter03/festival_opening.pdf";
+        = ColumnMovies1.class.getResource("/").getPath().substring(1)+ "results/part1/chapter03/festival_opening.pdf";
     /** The movie poster. */
     public static final String RESOURCE = "resources/img/loa.jpg";
 
@@ -62,23 +62,23 @@ public class FestivalOpening {
         document.add(p);
         document.add(img);
         // Add text on top of the image
-        PdfContentByte over = writer.getDirectContent();
+        PdfContentByte over = writer.getDirectContent();//this layer on top of text and graphics
         over.saveState();
         float sinus = (float)Math.sin(Math.PI / 60);
         float cosinus = (float)Math.cos(Math.PI / 60);
         BaseFont bf = BaseFont.createFont();
         over.beginText();
-        over.setTextRenderingMode(PdfContentByte.TEXT_RENDER_MODE_FILL_STROKE);
+        over.setTextRenderingMode(PdfContentByte.TEXT_RENDER_MODE_FILL_STROKE);//set this to draw the border
         over.setLineWidth(1.5f);
-        over.setRGBColorStroke(0xFF, 0x00, 0x00);
-        over.setRGBColorFill(0xFF, 0xFF, 0xFF);
+        over.setRGBColorStroke(0xFF, 0x00, 0x00);//boreder color
+        over.setRGBColorFill(0xFF, 0xFF, 0xFF);//fill color
         over.setFontAndSize(bf, 36);
         over.setTextMatrix(cosinus, sinus, -sinus, cosinus, 50, 324);
         over.showText("SOLD OUT");
         over.endText();
         over.restoreState();
         // Add a rectangle under the image
-        PdfContentByte under = writer.getDirectContentUnder();
+        PdfContentByte under = writer.getDirectContentUnder();// a layer under the text and graphics
         under.saveState();
         under.setRGBColorFill(0xFF, 0xD7, 0x00);
         under.rectangle(5, 5,

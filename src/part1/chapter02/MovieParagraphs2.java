@@ -28,7 +28,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 
 public class MovieParagraphs2 extends MovieParagraphs1 {
 
-    public static final String RESULT = "results/part1/chapter02/movie_paragraphs_2.pdf";
+    public static final String RESULT = DatabaseTest.class.getResource("/").getPath().substring(1)+"results/part1/chapter02/movie_paragraphs_2.pdf";
     
     /**
      * Main method.

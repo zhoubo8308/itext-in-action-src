@@ -26,7 +26,7 @@ public class MovieColumns2 extends MovieColumns1 {
 
     /** The resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter03/movie_columns2.pdf";
+        =MovieColumns2.class.getResource("/").getPath().substring(1)+ "results/part1/chapter03/movie_columns2.pdf";
     
     /**
      * Creates a PDF with information about the movies

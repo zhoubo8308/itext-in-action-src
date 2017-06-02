@@ -31,7 +31,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class MovieChain {
     
     /** The resulting PDF file. */
-    public static final String RESULT = "results/part1/chapter02/kubrick.pdf";
+    public static final String RESULT =DatabaseTest.class.getResource("/").getPath().substring(1)+ "results/part1/chapter02/kubrick.pdf";
     
     /**
      * Creates a PDF file with director names.

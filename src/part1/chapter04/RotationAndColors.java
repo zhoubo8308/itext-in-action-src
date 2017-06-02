@@ -24,7 +24,7 @@ import com.itextpdf.text.BaseColor;
 public class RotationAndColors {
     /** The resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter04/rotation_colors.pdf";
+        = ColumnWidths.class.getResource("/").getPath().substring(1)+  "results/part1/chapter04/rotation_colors.pdf";
 
     /**
      * Main method.

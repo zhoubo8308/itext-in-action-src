@@ -33,7 +33,7 @@ public class DirectorOverview1 {
     
     /** The resulting PDF file. */
     public static final String RESULT
-        = "results/part1/chapter02/director_overview_1.pdf";
+        =DatabaseTest.class.getResource("/").getPath().substring(1)+ "results/part1/chapter02/director_overview_1.pdf";
 
     /**
      * Creates a PDF with information about the movies

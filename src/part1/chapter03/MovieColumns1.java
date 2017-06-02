@@ -33,7 +33,7 @@ public class MovieColumns1 {
 
     /** The resulting PDF file. */
     public static final String RESULT
-        = "d:/movie_columns1.pdf";
+        = MovieCalendar.class.getResource("/").getPath().substring(1)+ "results/part1/chapter03/movie_columns1.pdf";
     
     /** Definition of two columns */
     public static final float[][] COLUMNS = {
@@ -60,15 +60,15 @@ public class MovieColumns1 {
         document.open();
         // step 4
         List<Movie> movies = PojoFactory.getMovies(connection);
-        ColumnText ct = new ColumnText(writer.getDirectContent());
+        ColumnText ct = new ColumnText(writer.getDirectContent());//create a columnText
         for (Movie movie : movies) {
-            ct.addText(createMovieInformation(movie));
+            ct.addText(createMovieInformation(movie));//add content like phase or chuck
             ct.addText(Chunk.NEWLINE);
         }
         ct.setAlignment(Element.ALIGN_JUSTIFIED);
-        ct.setExtraParagraphSpace(6);
-        ct.setLeading(0, 1.2f);
-        ct.setFollowingIndent(27);
+        ct.setExtraParagraphSpace(6);//set extra space between paragraphs
+        ct.setLeading(0, 1.2f);//set leading
+        ct.setFollowingIndent(27);// special indentation
         int linesWritten = 0;
         int column = 0;
         int status = ColumnText.START_COLUMN;
@@ -76,10 +76,10 @@ public class MovieColumns1 {
             ct.setSimpleColumn(
                     COLUMNS[column][0], COLUMNS[column][1],
                     COLUMNS[column][2], COLUMNS[column][3]);
-            ct.setYLine(COLUMNS[column][3]);
+            ct.setYLine(COLUMNS[column][3]);//define the y position
             status = ct.go();
             linesWritten += ct.getLinesWritten();
-            column = Math.abs(column - 1);
+            column = Math.abs(column - 1);//column is switched between 0 and 1
             if (column == 0)
                 document.newPage();
         }

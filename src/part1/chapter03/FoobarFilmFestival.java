@@ -27,7 +27,7 @@ import com.itextpdf.text.BaseColor;
 public class FoobarFilmFestival {
 
     public static final String RESULT
-        = "results/part1/chapter03/foobar_film_festival.pdf";
+        =FoobarFilmFestival.class.getResource("/").getPath().substring(1)+  "results/part1/chapter03/foobar_film_festival.pdf";
 
     /**
      * Main method.
@@ -138,18 +138,22 @@ public class FoobarFilmFestival {
         c.setHorizontalScaling(0.5f);
         phrase = new Phrase(c);
         ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, phrase, 400, 572, 0);
+
         c = new Chunk(foobar, times);
         c.setSkew(15, 15);
         phrase = new Phrase(c);
         ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, phrase, 400, 536, 0);
+
         c = new Chunk(foobar, times);
         c.setSkew(0, 25);
         phrase = new Phrase(c);
         ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, phrase, 400, 500, 0);
+
         c = new Chunk(foobar, times);
         c.setTextRenderMode(PdfContentByte.TEXT_RENDER_MODE_STROKE, 0.1f, BaseColor.RED);
         phrase = new Phrase(c);
         ColumnText.showTextAligned(canvas, Element.ALIGN_LEFT, phrase, 400, 464, 0);
+
         c = new Chunk(foobar, times);
         c.setTextRenderMode(PdfContentByte.TEXT_RENDER_MODE_FILL_STROKE, 1, null);
         phrase = new Phrase(c);

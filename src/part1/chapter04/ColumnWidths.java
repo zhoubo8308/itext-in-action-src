@@ -7,8 +7,11 @@
 
 package part1.chapter04;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
@@ -21,7 +24,7 @@ import com.itextpdf.text.pdf.PdfWriter;
 public class ColumnWidths {
 
     /** The resulting PDF file. */
-    public static final String RESULT = "results/part1/chapter04/column_widths.pdf";
+    public static final String RESULT = ColumnWidths.class.getResource("/").getPath().substring(1)+  "results/part1/chapter04/column_widths.pdf";
     
     /**
      * Creates a PDF with five tables.
@@ -41,8 +44,8 @@ public class ColumnWidths {
         PdfPTable table = createTable1();
         document.add(table);
         table = createTable2();
-        table.setSpacingBefore(5);
-        table.setSpacingAfter(5);
+       // table.setSpacingBefore(5);
+      //  table.setSpacingAfter(5);
         document.add(table);
         table = createTable3();
         document.add(table);
@@ -64,7 +67,7 @@ public class ColumnWidths {
     public static PdfPTable createTable1() throws DocumentException {
         PdfPTable table = new PdfPTable(3);
         table.setWidthPercentage(288 / 5.23f);
-        table.setWidths(new int[]{2, 1, 1});
+        table.setWidths(new int[]{2, 2, 2});
         PdfPCell cell;
         cell = new PdfPCell(new Phrase("Table 1"));
         cell.setColspan(3);
@@ -178,6 +181,15 @@ public class ColumnWidths {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException, DocumentException {
+        File file = new File(RESULT);
+        if(!file.exists()){
+            try {
+                Files.createDirectories(Paths.get(RESULT).getParent());
+                Files.createFile(Paths.get(RESULT));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         new ColumnWidths().createPdf(RESULT);
     }
 }
